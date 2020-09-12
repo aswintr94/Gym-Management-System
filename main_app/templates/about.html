@@ -1,0 +1,32 @@
+{% extends 'login_page.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 style="padding: 1em;">About us</h3>
+            </div>
+        </div>
+        <div class="row align-items-center font-weight-bold" style="height: 428px;">
+            <div class="col-md-6" style="margin: auto;">
+                <img src="{% static 'gym4.jpg' %}" width="80%" height="80%" alt="No image">
+            </div>
+            <div class="col-md-6">
+                <p>This is a simple Gym management system created by Aswin.T.R using <br>
+                    python,django,SQLite,HTML,CSS,Bootstrap4 etc.</p>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}
+</body>
+</html>
