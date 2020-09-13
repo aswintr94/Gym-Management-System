@@ -1,0 +1,53 @@
+{% extends 'login_page.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <style>
+        .card:hover{
+            border-color: crimson ;
+        }
+    </style>
+    <div class="container" style="height: 528px;">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 style="padding: 1em;">Contact us</h2>
+            </div>
+        </div>
+        <div class="row" style="padding: 1em;">
+            <div class="col-md-4">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Mobile</h5>
+                    <p class="card-text">9895******</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Email Address</h5>
+                    <p class="card-text">abc@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Address</h5>
+                    <p class="card-text">Gandhi Nagar,2nd Street</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}
+</body>
+</html>
