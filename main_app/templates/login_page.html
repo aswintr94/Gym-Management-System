@@ -37,7 +37,8 @@
         <div class="container" style="padding: 3em;">
         <!-- Login Form -->
         <h3 class="text-center">Admin Login</h3>
-        <form>
+        <form action="{% url 'login_success' %}" method="POST">
+            {% csrf_token %}
             <div class="form-group">
             <label for="exampleInputUsername1">Username</label>
             <input type="text" name="username" class="form-control" id="exampleInputUsername1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -83,7 +84,7 @@
 
     {% endblock %}
 
-    <footer class="bg-dark align-bottom" style="height: 3em;">
+    <footer class="bg-dark align-bottom" style="height: 3em; position: fixed; bottom: 0%; width: 100%;">
       <div class="footer-copyright">
         <div class="container" style="color: aliceblue;">
         © 2020 Copyright All rights reserved | This website is created by <big>Aswin TR</big>
