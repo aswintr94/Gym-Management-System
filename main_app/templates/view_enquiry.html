@@ -16,15 +16,17 @@
                 </tr>
             </thead>
             <tbody>
+                {% for i in enq %}
                 <tr>
-                    <td></td>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.mobile}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.gender}}</td>
+                    <td><a href="{% url 'remove_enquiry' e_id=i.id %}">Remove</a></td>
                 </tr>
+                {% endfor %}
             </tbody>
             <tfoot>
                 <tr>

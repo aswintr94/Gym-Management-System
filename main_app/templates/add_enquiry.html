@@ -7,7 +7,8 @@
         <h2 class="text-center" style="margin: 1em;">Add Enquiry</h2>
         
         <div class="col-md-12">
-        <form>
+        <form id="enquiry_form" action="{% url 'enquiry_submit' %}" method="POST"> 
+            {% csrf_token %}
             <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputName4">Name</label>
@@ -39,9 +40,32 @@
                     </div>
                 </div>
             </div>
-            <button style="width: 100%;margin: 1em;" type="submit" class="btn btn-primary">Submit</button>
+            <button style="width: 100%;margin: 1em;" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
         </form>
     </div>
+    </div>
+
+    
+  
+    <!-- Modal -->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Successful!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            Enquiry submitted successfully
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+        </div>
     </div>
 
 {% endblock %}
