@@ -1,0 +1,27 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="text-center" style="margin: 1em;">Add Plan</h2>
+    <div class="col-md-12">
+        <form id="add_plan_form" action="{% url 'plan_submit' %}" method="POST"> 
+            {% csrf_token %}
+            <div class="form-group col-md-12">
+                <label for="inputName4">Plan Name</label>
+                <input type="text" name="plan_name" class="form-control" id="inputName4" placeholder="Enter the name of plan">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="inputName4">Amount</label>
+                <input type="text" name="plan_amount" class="form-control" id="inputName4" placeholder="Enter amount(in Rs)">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="inputName4">Duration</label>
+                <input type="text" name="plan_duration" class="form-control" id="inputName4" placeholder="Enter the duration(in months)">
+            </div>
+            <button style="width: 100%;margin: 1em;" type="submit" class="btn btn-primary" onclick="return alert('Plan added successfully')">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

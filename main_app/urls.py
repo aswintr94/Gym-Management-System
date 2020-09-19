@@ -12,4 +12,8 @@ urlpatterns = [
     path('view_enquiry/',views.view_enquiry,name='view_enquiry'),
     path('enquiry_submit/',views.enquiry_submit,name='enquiry_submit'),
     path('remove_enquiry/<int:e_id>',views.remove_enquiry,name='remove_enquiry'),
+    path('add_plan/',views.add_plan,name='add_plan'),
+    path('plan_submit/',views.plan_submit,name='plan_submit'),
+    path('view_plan/',views.view_plan,name='view_plan'),
+    path('remove_plan/<int:plan_id>',views.remove_plan,name='remove_plan'),
 ]

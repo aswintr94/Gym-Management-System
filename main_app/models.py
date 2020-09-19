@@ -7,3 +7,8 @@ class Enquiry(models.Model):
     email = models.EmailField()
     age = models.IntegerField()
     gender = models.CharField(max_length=10)
+
+class Plans(models.Model):
+    plan_name = models.CharField(max_length=30)
+    plan_amount = models.IntegerField()
+    plan_duration = models.IntegerField()

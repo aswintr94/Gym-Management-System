@@ -7,65 +7,46 @@
         <h2 class="text-center" style="margin: 1em;">Add Enquiry</h2>
         
         <div class="col-md-12">
-        <form id="enquiry_form" action="{% url 'enquiry_submit' %}" method="POST"> 
-            {% csrf_token %}
-            <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="inputName4">Name</label>
-                <input type="text" name="name" class="form-control" id="inputName4" placeholder="Name">
-            </div>
-            </div>
-            <div class="form-row">
+            <form id="enquiry_form" action="{% url 'enquiry_submit' %}" method="POST"> 
+                {% csrf_token %}
+                <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="inputMobile4">Mobile</label>
-                    <input type="tel" name="mobile" class="form-control" id="inputMobile4" placeholder="Mobile number">
+                    <label for="inputName4">Name</label>
+                    <input type="text" name="name" class="form-control" id="inputName4" placeholder="Name">
                 </div>
-                <div class="form-group col-md-12">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
                 </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-8">
-                    <label for="inputAge4">Age</label>
-                    <input type="number" name="age" class="form-control" id="inputAge4" min="18">
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Gender</label>
-                    <div>
-                    <input type="radio" name="gender" id="inputGenderMale4" value="male">
-                    <label for="inputGenderMale4">Male</label>
-                    <input style="margin-left: 1em;" type="radio" name="gender" id="inputGenderFemale4" value="female">
-                    <label for="inputGenderFemale4">Female</label>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputMobile4">Mobile</label>
+                        <input type="tel" name="mobile" class="form-control" id="inputMobile4" placeholder="Mobile number">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
                     </div>
                 </div>
-            </div>
-            <button style="width: 100%;margin: 1em;" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
-        </form>
-    </div>
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="inputAge4">Age</label>
+                        <input type="number" name="age" class="form-control" id="inputAge4" min="18">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Gender</label>
+                        <div>
+                        <input type="radio" name="gender" id="inputGenderMale4" value="male">
+                        <label for="inputGenderMale4">Male</label>
+                        <input style="margin-left: 1em;" type="radio" name="gender" id="inputGenderFemale4" value="female">
+                        <label for="inputGenderFemale4">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <button style="width: 100%;margin: 1em;" type="submit" class="btn btn-primary" onclick="return alert('Enquiry submitted')">Submit</button>
+            </form>
+        </div>
     </div>
 
     
   
-    <!-- Modal -->
-    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Successful!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-            Enquiry submitted successfully
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-        </div>
-        </div>
-    </div>
+    
 
 {% endblock %}
