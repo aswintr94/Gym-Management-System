@@ -1,0 +1,75 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+
+    <div class="container" style="height: auto">
+        <h2 class="text-center" style="margin: 1em;">Add Member</h2>
+        <div class="col-md-12">
+            <form id="add_member_form" action="{% url 'submit_member' %}" method="POST"> 
+                {% csrf_token %}
+                <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputName4">Name</label>
+                    <input type="text" name="name" class="form-control" id="inputName4" placeholder="Enter the name">
+                </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputMobile4">Mobile</label>
+                        <input type="tel" name="mobile" class="form-control" id="inputMobile4" placeholder="Enter the mobile number">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Enter email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="inputAge4">Age</label>
+                        <input type="number" name="age" class="form-control" id="inputAge4" min="18">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Gender</label>
+                        <div>
+                        <input type="radio" name="gender" id="inputGenderMale4" value="male">
+                        <label for="inputGenderMale4">Male</label>
+                        <input style="margin-left: 1em;" type="radio" name="gender" id="inputGenderFemale4" value="female">
+                        <label for="inputGenderFemale4">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 1em;">
+                    <div class="col-md-4">
+                        <label for="">Choose the plan: </label>
+                        <select name="plan" id="plan">
+                            <option value="">Select</option>
+                            {% for i in plan %}
+                            <option value="{{i.plan_name}}">{{i.plan_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Joining date: </label>
+                        <input type="date" name="joining_date">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Initial amount: </label>
+                    <input type="text" name="initial_amount" placeholder="in Rs.">
+                    </div>
+                </div>
+                
+                <div class="form-row" style="margin-top: 1em;">
+                    
+                    
+                </div>
+                <button style="width: 100%;margin: 1em;" type="submit" class="btn btn-primary" onclick="return alert('New member added')">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    
+  
+    
+
+{% endblock %}

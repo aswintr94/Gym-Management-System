@@ -19,4 +19,10 @@ urlpatterns = [
     path('add_equipment/',views.add_equipment,name='add_equipment'),
     path('equipment_submit/',views.equipment_submit,name='equipment_submit'),
     path('view_equipment/',views.view_equipment,name='view_equipment'),
+    path('delete_equipment/<int:e_id>',views.delete_equipment,name='delete_equipment'),
+    path('add_member/',views.add_member,name='add_member'),
+    path('submit_member/',views.submit_member,name='submit_member'),
+    path('view_member/',views.view_member,name='view_member'),
+    path('remove_member/<int:m_id>',views.remove_member,name='remove_member'),
+    path('log_out/',views.log_out,name='log_out'),
 ]
