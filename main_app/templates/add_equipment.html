@@ -1,0 +1,36 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h2 class="text-center" style="margin: 1em;">Add Equipment</h2>
+        
+        <div class="col-md-12">
+            <form id="enquiry_form" action="{% url 'equipment_submit' %}" method="POST"> 
+                {% csrf_token %}
+                <div class="form-group col-md-12">
+                    <label for="">Equipment name</label>
+                    <input type="text" name="equipment_name" class="form-control" id="" placeholder="Enter name of equipment">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputMobile4">Price(in Rs.)</label>
+                    <input type="text" name="equipment_price" class="form-control" id="" placeholder="Enter amount in Rs.">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="">Unit</label>
+                    <input type="number" name="units" class="form-control" id="" placeholder="Enter the no. of units">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="">Purchased date</label>
+                    <input type="date" name="purchased_date" class="form-control" id="">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="">Description</label>
+                    <textarea name="description" id="" cols="113" rows="3"></textarea>
+                </div>
+                <button style="width: 100%;margin: 1em;" type="submit" class="btn btn-primary" onclick="return alert('Equipment added')">Submit</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

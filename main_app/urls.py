@@ -16,4 +16,7 @@ urlpatterns = [
     path('plan_submit/',views.plan_submit,name='plan_submit'),
     path('view_plan/',views.view_plan,name='view_plan'),
     path('remove_plan/<int:plan_id>',views.remove_plan,name='remove_plan'),
+    path('add_equipment/',views.add_equipment,name='add_equipment'),
+    path('equipment_submit/',views.equipment_submit,name='equipment_submit'),
+    path('view_equipment/',views.view_equipment,name='view_equipment'),
 ]

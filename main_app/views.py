@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from main_app.models import Enquiry,Plans
+from main_app.models import Enquiry,Plans,Equipments
 from django.http import JsonResponse,HttpResponse
 
 # Create your views here.
@@ -24,9 +24,11 @@ def dashboard(request):
     if 'username' in request.session:
         enq = Enquiry.objects.all()
         plan = Plans.objects.all()
+        equip = Equipments.objects.all()
         len_enq = len(enq)
         len_plan = len(plan)
-        return render(request,'dashboard.html',{'len_enq':len_enq, 'len_plan':len_plan})
+        len_equip = len(equip)
+        return render(request,'dashboard.html',{'len_enq':len_enq, 'len_plan':len_plan,'len_equip':len_equip})
     else:
         return redirect(login)
 
@@ -70,3 +72,21 @@ def view_plan(request):
 def remove_plan(request,plan_id):
     Plans.objects.filter(id=plan_id).delete()
     return redirect(view_plan)
+
+def add_equipment(request):
+    return render(request,'add_equipment.html')
+
+def equipment_submit(request):
+    eq_name = request.POST.get('equipment_name')
+    eq_price = request.POST.get('equipment_price')
+    units = request.POST.get('units')
+    purchased_date = request.POST.get('purchased_date')
+    description = request.POST.get('description')
+
+    new_equipment = Equipments(equipment_name=eq_name,equipment_price=eq_price,unit=units,purchased_date=purchased_date,description=description)
+    new_equipment.save()
+    return redirect(add_equipment)
+
+def view_equipment(request):
+    equipment = Equipments.objects.all()
+    return render(request,'view_equipment.html',{'equipment':equipment})
